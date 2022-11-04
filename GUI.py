@@ -10,9 +10,11 @@ def button_clicked ():
     Cappuccino_total = int(lbl3_sb.get())*17
     Ice_Tea_total = int(lbl4_sb.get())*8
     Mineral_Water_total = int(lbl5_sb.get())*5
-    total_bills = Americano_total + Mocha_Latte_total + Cappuccino_total + Ice_Tea_total + Mineral_Water_total
+    Waffle_total = int(lbl6_sb.get())*20
+    Croissant_total = int(lbl7_sb.get())*25
+    total_bills = Americano_total + Mocha_Latte_total + Cappuccino_total + Ice_Tea_total + Mineral_Water_total + Waffle_total + Croissant_total
     bills = Label(text=f"Total pesanan {total_bills}k",font=("Times New Roman",15,"bold"),bg="green")
-    bills.place(x=20,y=250)
+    bills.place(x=20,y=275)
 
 title_name = Label(text="Hits Cafe",font=("Times New Roman",20,"bold"),bg="green")
 title_name.grid(column=1,row=0)
@@ -45,7 +47,17 @@ lbl5.place(x=10, y=170)
 lbl5_sb = Spinbox(from_=0, to=10, width=5)
 lbl5_sb.place(x=200, y=175)
 
+lbl6 = Label(text="Waffle (20k)\t: ",anchor="e",font=("Times New Roman",15,"normal"),bg="green")
+lbl6.place(x=10, y=195)
+lbl6_sb = Spinbox(from_=0, to=10, width=5)
+lbl6_sb.place(x=200, y=200)
+
+lbl7 = Label(text="Croissant (25k)\t: ",anchor="e",font=("Times New Roman",15,"normal"),bg="green")
+lbl7.place(x=10, y=220)
+lbl7_sb = Spinbox(from_=0, to=10, width=5)
+lbl7_sb.place(x=200, y=225)
+
 finish = Button(text="order", command=button_clicked)
-finish.place(x=20 , y=200)
+finish.place(x=20 , y=250)
 
 window.mainloop()
